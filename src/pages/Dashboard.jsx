@@ -1,17 +1,22 @@
-import Navbar from "../componets/Navbar";
 import Sidebar from "../componets/Sidebar";
+import Navbar from "../componets/Navbar";
+import "../styles/global.css";
+import "../styles/dashboard.css";
 
 function Dashboard() {
   return (
     <div className="d-flex">
+
       <Sidebar />
 
-      <div className="w-100">
+      <div className="flex-grow-1">
+
         <Navbar />
 
-        <div className="container mt-4">
-          <h2>Dashboard</h2>
+        <div className="d-flex justify-content-center align-items-center dashboard-bg">
+          <img src="/logo.png" alt="logo" className="dashboard-logo-bg" />
         </div>
+
       </div>
     </div>
   );

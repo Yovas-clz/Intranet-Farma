@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* BOTONES */
+.btn-primary-custom {
+  border-radius: 50px;
+  background: linear-gradient(90deg, #5fa8ff, #2c6ed5);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+/* INPUTS */
+.rounded-input {
+  border-radius: 50px;
+  border: 3px solid black;
+  padding: 10px;
+}
+
+/* NAVBAR */
+.navbar-custom {
+  height: 60px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+/* SEARCH */
+.search-bar {
+  width: 300px;
+  border-radius: 50px;
+  border: none;
+  background-color: #eee;
+  padding: 8px 15px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background-color: #E6E6E6;
+  padding: 15px;
+}
+
+.sidebar-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.sidebar-active {
+  border: 2px solid red;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
