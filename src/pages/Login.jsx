@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import "../styles/global.css";
+import "../styles/login.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -9,24 +11,33 @@ function Login() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-      <form className="p-4 shadow bg-white rounded" onSubmit={handleLogin}>
-        <h3 className="text-center mb-3">100% Farma</h3>
+    <div className="d-flex flex-column align-items-center justify-content-center login-container">
 
-        <input
-        type="text"
-        placeholder="Usuario"
-        className="form-control mb-3"
-        />
+      <img
+        src="/Logo-1.png"
+        alt="logo"
+        style={{ width: "120px" }}
+        className="position-absolute top-0 start-0 m-3"
+      />
 
-        <input
-        type="password"
-        placeholder="Contraseña"
-        className="form-control mb-3"
-        />
+      <div className="login-logo-circle mb-4">
+        <img src="../public/Logo-1.png" alt="logo" style={{ width: "150px" }} />
+      </div>
 
-        <button className="btn btn-primary w-100">Entrar</button>
+      <form onSubmit={handleLogin} className="login-form">
+
+        <label>Usuario</label>
+        <input className="form-control rounded-input mb-3" placeholder="USUARIO@ejemplo" />
+
+        <label>Contraseña</label>
+        <input type="password" className="form-control rounded-input mb-4" placeholder="********" />
+
+        <button className="btn btn-primary-custom w-100">
+          INICIAR SESIÓN
+        </button>
+
       </form>
+
     </div>
   );
 }
