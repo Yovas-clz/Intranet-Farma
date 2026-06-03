@@ -1,0 +1,9 @@
+.dashboard-bg {
+  background-color: #AFC0D4;
+  height: calc(100vh - 60px);
+}
+
+.dashboard-logo-bg {
+  width: 400px;
+  opacity: 0.2;
+}

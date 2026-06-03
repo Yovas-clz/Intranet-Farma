@@ -1,22 +1,29 @@
+import "../styles/global.css";
+
 function Sidebar() {
   return (
-    <div className="bg-dark text-white p-3" style={{ width: "250px", height: "100vh" }}>
-      <h4>100% Farma</h4>
-      <hr />
+    <div className="sidebar">
 
-      <ul className="nav flex-column">
-        <li className="nav-item">Dashboard</li>
-        <li className="nav-item">Reportes</li>
-        <li className="nav-item">Inventario</li>
-        <li className="nav-item">Estadisticas</li>
-        <li className="nav-item">Encuestas</li>
-        <li className="nav-item">Sucursales</li>
-    
-    
-        <li className="nav-item">Evidencias</li>
-        <hr />
-        <li className="nav-item">Cerrar sesión</li>
+      <img src="/logo.png" alt="logo" style={{ width: "130px" }} />
+      <hr />
+      <ul className="mt-4 list-unstyled">
+
+        <li className="sidebar-item sidebar-active">🏠 Inicio</li>
+        <li className="sidebar-item">📄 Reportes</li>
+        <li className="sidebar-item">🛒 Inventario</li>
+        <li className="sidebar-item">📊 Estadísticas</li>
+        <li className="sidebar-item">📋 Encuestas</li>
+        <li className="sidebar-item">📝 Formulario</li>
+        <li className="sidebar-item">🏢 Sucursales</li>
+        
+        
+        <li className="sidebar-item">📎 Evidencias</li>
+
       </ul>
+      <hr />
+      <div className="mt-auto">
+        <small style={{ cursor: "pointer" }}>Cerrar sesión</small>
+      </div>
     </div>
   );
 }
