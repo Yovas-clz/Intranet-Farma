@@ -4,19 +4,17 @@ function Sidebar() {
   return (
     <div className="sidebar">
 
-      <img src="/logo.png" alt="logo" style={{ width: "130px" }} />
+      <img src="/preview.png" alt="logo" style={{ width: "130px", height: "auto", justifyContent: "center" }} />
       <hr />
       <ul className="mt-4 list-unstyled">
 
         <li className="sidebar-item sidebar-active">🏠 Inicio</li>
-        <li className="sidebar-item">📄 Reportes</li>
+        <li className="sidebar-item ">📄 Reportes</li>
         <li className="sidebar-item">🛒 Inventario</li>
         <li className="sidebar-item">📊 Estadísticas</li>
         <li className="sidebar-item">📋 Encuestas</li>
         <li className="sidebar-item">📝 Formulario</li>
         <li className="sidebar-item">🏢 Sucursales</li>
-        
-        
         <li className="sidebar-item">📎 Evidencias</li>
 
       </ul>

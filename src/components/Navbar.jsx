@@ -12,7 +12,7 @@ function Navbar() {
         <span className="me-3">🔔</span>
 
         <img
-          src="/user.png"
+          src="/qwerty.jpg"
           alt="user"
           style={{ width: "35px", borderRadius: "50%" }}
         />

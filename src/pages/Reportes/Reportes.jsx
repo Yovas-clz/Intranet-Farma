@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import SatisfaccionForm from '../../components/SatisfaccionForm';
 
 // ================= COMPONENTE DE INVENTARIO =================
 function VistaInventario() {
@@ -8,7 +9,10 @@ function VistaInventario() {
   const fileInputRef = useRef(null);
 
   const [insumos, setInsumos] = useState([
-    { id: 1, material: 'Escoba', cantidadActual: 450, cantidadMinima: 200, estado: 'Bueno' }
+    { id: 1, material: 'Escoba', 
+      cantidadActual: 4, 
+      cantidadMinima: 20, 
+      estado: 'Bueno' }
   ]);
 
   const [medicamentos, setMedicamentos] = useState([
@@ -21,12 +25,14 @@ function VistaInventario() {
     setEstaCargando(true);
     setProgreso(0);
     let porcentaje = 0;
+
     const intervalo = setInterval(() => {
       porcentaje += 5;
       setProgreso(porcentaje);
       if (porcentaje >= 100) {
         clearInterval(intervalo);
         setEstaCargando(false);
+
         const nuevoInsumo = {
           id: Date.now(),
           material: archivo.name.split('.')[0],
@@ -161,6 +167,7 @@ export default function Reportes() {
 
   const [comentario, setComentario] = useState("");
   const [todosSeleccionados, setTodosSeleccionados] = useState(false);
+  const [surveyResponses, setSurveyResponses] = useState([]);
 
   const controlarSubidaArchivo = (e) => {
     const archivo = e.target.files[0];
@@ -222,6 +229,10 @@ export default function Reportes() {
     }
   };
 
+  const handleSurveySubmit = (value) => {
+    setSurveyResponses(prev => [...prev, value]);
+  };
+
   return (
     <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#D6E6F2', fontFamily: 'Arial, sans-serif' }}>
       
@@ -237,7 +248,17 @@ export default function Reportes() {
             {/* Botón Reportes */}
             <li 
               onClick={() => setSeccionActual('reportes')}
-              style={{ padding: '12px 25px', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: seccionActual === 'reportes' ? '#D6E6F2' : 'transparent', color: seccionActual === 'reportes' ? '#0052CC' : '#4A5568', borderRadius: '0 20px 20px 0', fontSize: '14px', fontWeight: seccionActual === 'reportes' ? 'bold' : 'normal', marginRight: '15px', cursor: 'pointer' }}
+              style={{ padding: '12px 25px', 
+                       display: 'flex', 
+                       alignItems: 'center', 
+                       gap: '12px', 
+                       backgroundColor: seccionActual === 'reportes' ? '#D6E6F2' : 'transparent', 
+                       color: seccionActual === 'reportes' ? '#0052CC' : '#4A5568', 
+                       borderRadius: '0 20px 20px 0', 
+                       fontSize: '14px', 
+                       fontWeight: seccionActual === 'reportes' ? 'bold' : 'normal', 
+                       marginRight: '15px', 
+                       cursor: 'pointer' }}
             >
               <span>📄</span> Reportes
             </li>
@@ -245,17 +266,68 @@ export default function Reportes() {
             {/* Botón Inventario */}
             <li 
               onClick={() => setSeccionActual('inventario')}
-              style={{ padding: '12px 25px', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: seccionActual === 'inventario' ? '#D6E6F2' : 'transparent', color: seccionActual === 'inventario' ? '#0052CC' : '#4A5568', borderRadius: '0 20px 20px 0', fontSize: '14px', fontWeight: seccionActual === 'inventario' ? 'bold' : 'normal', marginRight: '15px', cursor: 'pointer' }}
+              style={{ padding: '12px 25px', 
+                       display: 'flex', 
+                       alignItems: 'center', 
+                       gap: '12px', 
+                       backgroundColor: seccionActual === 'inventario' ? '#D6E6F2' : 'transparent', 
+                       color: seccionActual === 'inventario' ? '#0052CC' : '#4A5568', 
+                       borderRadius: '0 20px 20px 0', 
+                       fontSize: '14px', 
+                       fontWeight: seccionActual === 'inventario' ? 'bold' : 'normal', 
+                       marginRight: '15px', 
+                       cursor: 'pointer' }}
             >
               <span>🛒</span> Inventario
             </li>
+
+{/*---------------------------------------------------------------------------------------------------------/*/}
+
+            <li 
+              onClick={() => setSeccionActual('estadistica')}
+              style={{ padding: '12px 25px', 
+                       display: 'flex', 
+                       alignItems: 'center', 
+                       gap: '12px', 
+                       backgroundColor: seccionActual === 'estadistica' ? '#D6E6F2' : 'transparent', 
+                       color: seccionActual === 'estadistica' ? '#0052CC' : '#4A5568', 
+                       borderRadius: '0 20px 20px 0', 
+                       fontSize: '14px', 
+                       fontWeight: seccionActual === 'estadistica' ? 'bold' : 'normal', 
+                       marginRight: '15px', 
+                       cursor: 'pointer' }}
+            >
+              <span>📋</span> Estadística
+            </li>
+
+{/*---------------------------------------------------------------------------------------------------------/*/}
+
+            <li 
+              onClick={() => setSeccionActual('encuesta')}
+              style={{ padding: '12px 25px', 
+                       display: 'flex', 
+                       alignItems: 'center', 
+                       gap: '12px', 
+                       backgroundColor: seccionActual === 'encuesta' ? '#D6E6F2' : 'transparent', 
+                       color: seccionActual === 'encuesta' ? '#0052CC' : '#4A5568', 
+                       borderRadius: '0 20px 20px 0', 
+                       fontSize: '14px', 
+                       fontWeight: seccionActual === 'encuesta' ? 'bold' : 'normal', 
+                       marginRight: '15px', 
+                       cursor: 'pointer' }}
+            >
+              <span>📊</span> Encuesta
+            </li>
+
           </ul>
         </div>
-        <div style={{ padding: '12px 25px', display: 'flex', alignItems: 'center', gap: '12px', color: '#4A5568', fontSize: '14px', borderTop: '1px solid #EDF2F7', cursor: 'pointer' }}>
+        <div style={{ padding: '12px 25px', 
+                      display: 'flex', 
+                      alignItems: 'center', gap: '12px', color: '#4A5568', fontSize: '14px', borderTop: '1px solid #EDF2F7', cursor: 'pointer' }}>
           <span>🚪</span> Cerrar sesión
         </div>
       </div>
-
+{/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
       {/* CONTENIDO PRINCIPAL */}
       <div style={{ flex: 1, padding: '20px 40px', display: 'flex', flexDirection: 'column', gap: '20px', boxSizing: 'border-box', minWidth: 0 }}>
         
@@ -353,6 +425,33 @@ export default function Reportes() {
               <input type="text" placeholder="Añadir comentarios..." value={comentario} onChange={(e) => setComentario(e.target.value)} style={{ width: '60%', padding: '12px 25px', borderRadius: '25px', border: '2px solid #0080FF', outline: 'none', textAlign: 'center' }} />
             </div>
           </>
+        ) : seccionActual === 'inventario' ? (
+          <VistaInventario />
+        ) : seccionActual === 'encuesta' ? (
+          <div>
+            <h1 style={{ fontSize: '32px', color: '#1A1CA6', fontWeight: 'bold', margin: 0 }}>Encuesta</h1>
+            <div style={{ marginTop: '20px', backgroundColor: '#FFFFFF', border: '2px solid #1A1CA6', borderRadius: '20px', padding: '24px' }}>
+              <SatisfaccionForm onSubmit={handleSurveySubmit} />
+              <div style={{ marginTop: '16px', padding: '12px', borderRadius: '12px', backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0' }}>
+                <h3 style={{ margin: '0 0 8px 0', color: '#1A202C' }}>Resumen de respuestas</h3>
+                {surveyResponses.length === 0 ? (
+                  <p style={{ margin: 0, color: '#718096' }}>Aún no hay respuestas.</p>
+                ) : (
+                  <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+                    <div style={{ fontWeight: 'bold' }}>Total: {surveyResponses.length}</div>
+                    <div>Promedio: {(surveyResponses.reduce((a,b)=>a+b,0)/surveyResponses.length).toFixed(2)}</div>
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                      {[1,2,3,4,5].map((v)=> (
+                        <div key={v} style={{ padding: '6px 8px', borderRadius: '8px', background: '#FFFFFF', border: '1px solid #E2E8F0' }}>
+                          {v}: {surveyResponses.filter(x=>x===v).length}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         ) : (
           <VistaInventario />
         )}
