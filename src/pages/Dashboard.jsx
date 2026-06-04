@@ -1,11 +1,9 @@
 
-import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-
-import Sidebar from "../componets/Sidebar";
-import Navbar from "../componets/Navbar";
+import Navbar from "../components/Navbar";
 import "../styles/global.css";
 import "../styles/dashboard.css";
+
 
 
 function Dashboard() {
