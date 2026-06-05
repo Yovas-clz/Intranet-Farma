@@ -14,14 +14,14 @@ function Login() {
     <div className="d-flex flex-column align-items-center justify-content-center login-container">
 
       <img
-        src="/Logo-1.png"
+        src="/preview.png"
         alt="logo"
         style={{ width: "120px" }}
         className="position-absolute top-0 start-0 m-3"
       />
 
       <div className="login-logo-circle mb-4">
-        <img src="../public/Logo-1.png" alt="logo" style={{ width: "150px" }} />
+        <img src="/preview.png" alt="logo" style={{ width: "150px" }} />
       </div>
 
       <form onSubmit={handleLogin} className="login-form">
