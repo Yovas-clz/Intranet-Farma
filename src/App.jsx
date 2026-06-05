@@ -3,7 +3,8 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Reportes from "./pages/Reportes/Reportes";
 import Inventario from "./pages/Inventario/Inventario";
-
+import Sucursales from "./pages/Sucursales/Sucursales";
+import Evidencias from "./pages/Evidencias/Evidencias";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,8 @@ function App() {
         <Route path="/Inventario" element={<Inventario />} />
       
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/Sucursales" element={<Sucursales />} />
+        <Route path="/Evidencias" element={<Evidencias />} />
 
       </Routes>
     </BrowserRouter>
