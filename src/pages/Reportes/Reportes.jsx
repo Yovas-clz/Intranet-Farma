@@ -22,6 +22,7 @@ export default function Reportes() {
 
   const [comentario, setComentario] = useState("");
   const [todosSeleccionados, setTodosSeleccionados] = useState(false);
+  const [surveyResponses, setSurveyResponses] = useState([]);
 
   const controlarSubidaArchivo = (e) => {
     const archivo = e.target.files[0];
@@ -81,6 +82,10 @@ export default function Reportes() {
     if (window.confirm(`¿Estás seguro de que deseas eliminar permanentemente: ${nombre}?`)) {
       setReportes(prev => prev.filter(rep => rep.id !== id));
     }
+  };
+
+  const handleSurveySubmit = (value) => {
+    setSurveyResponses(prev => [...prev, value]);
   };
 
   return (

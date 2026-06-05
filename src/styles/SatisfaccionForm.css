@@ -1,0 +1,14 @@
+.survey-container{display:flex;flex-direction:column;align-items:center;gap:16px;padding:18px;background:#fff;border-radius:16px;box-shadow:0 6px 18px rgba(10,10,10,0.06);max-width:520px;margin:0 auto}
+.survey-header{text-align:center}
+.survey-title{font-size:20px;color:#1A1CA6;margin:0}
+.survey-question{color:#4A5568;margin:4px 0 0 0}
+.options-container{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.option-button{display:flex;flex-direction:column;align-items:center;padding:10px 12px;border:2px solid #EDF2F7;border-radius:12px;background:#fff;cursor:pointer;transition:all .15s ease;width:120px}
+.option-button .emoji{font-size:28px}
+.option-button .label{font-size:12px;margin-top:8px;color:#4A5568;text-align:center}
+.option-button:hover{transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,0.06)}
+.option-button.selected{border-color:#0080FF;background:#E6F3FF}
+.action-container{margin-top:6px}
+.submit-button{background:#0080FF;color:#fff;padding:10px 18px;border-radius:999px;border:none;cursor:pointer;font-weight:700}
+.submit-button:disabled{background:#CBD5E0;cursor:not-allowed;color:#4A5568}
+.thank-you-message{color:#0F5132;background:#D1FAE5;padding:10px 14px;border-radius:10px;font-size:14px}

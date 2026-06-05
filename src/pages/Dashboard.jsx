@@ -17,7 +17,7 @@ function Dashboard() {
         <Navbar />
 
         <div className="d-flex justify-content-center align-items-center dashboard-bg">
-          <img src="/logo.png" alt="logo" className="dashboard-logo-bg" />
+          <img src="/preview.png" alt="logo" className="dashboard-logo-bg" />
         </div>
 
       </div>

@@ -14,7 +14,7 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Reportes" element={<Reportes/>} />
         <Route path="/Inventario" element={<Inventario />} />
-
+      
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/Sucursales" element={<Sucursales />} />
         <Route path="/Evidencias" element={<Evidencias />} />
