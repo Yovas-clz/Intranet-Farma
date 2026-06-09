@@ -1,0 +1,159 @@
+/* ============================= */
+/* HEADER INVENTARIO */
+/* ============================= */
+
+.header-inventario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TITULO */
+.inventario-title {
+  font-size: 28px;
+  color: #1A1CA6;
+  font-weight: bold;
+}
+
+.inventario-subtitle {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* SWITCH (Medicamentos / Insumos) */
+/* ============================= */
+
+.switch-container {
+  background: #E2E8F0;
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+  gap: 5px;
+}
+
+.switch-btn {
+  padding: 8px 20px;
+  border-radius: 15px;
+  border: none;
+  background: transparent;
+  color: #4A5568;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.switch-btn.active {
+  background: #0080FF;
+  color: white;
+}
+
+/* ============================= */
+/* ESPACIADO GENERAL */
+/* ============================= */
+
+.inventario-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ============================= */
+/* TARJETAS (si las usas después) */
+/* ============================= */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+}
+
+/* ============================= */
+/* TABLAS (base reutilizable) */
+/* ============================= */
+
+.table-box {
+  background: #0080FF;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #1A1CA6;
+}
+
+.table-header {
+  padding: 12px 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.table-body {
+  background: white;
+  padding: 20px;
+}
+/* FILAS TABLA */
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.table-head {
+  font-weight: bold;
+  background: #f1f5f9;
+}
+
+/* ESTADO */
+.estado-ok {
+  color: #2ECC71;
+  font-weight: bold;
+}
+
+/* UPLOAD */
+.upload-box {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #1A1CA6;
+}
+
+.drop-zone {
+  border: 2px dashed #0080FF;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.drop-zone button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #0080FF;
+  color: white;
+}
+
+/* PROGRESO */
+.progress-bar {
+  margin-top: 15px;
+  background: #1A437E;
+  border-radius: 20px;
+  height: 25px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  background: #0080FF;
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}

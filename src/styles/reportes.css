@@ -1,0 +1,92 @@
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1A1CA6;
+}
+
+.upload-box {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid #1A1CA6;
+}
+
+.drop-zone {
+  border: 2px dashed #0080FF;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.drop-zone button {
+  margin-top: 10px;
+  background: #0080FF;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.progress-bar {
+  margin-top: 10px;
+  background: #1A437E;
+  border-radius: 20px;
+  height: 25px;
+}
+
+.progress-bar div {
+  background: #0080FF;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.report-container {
+  margin-top: 20px;
+  background: #0080FF;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.report-list {
+  background: white;
+  padding: 10px;
+}
+
+.report-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.report-item.selected {
+  background: #EBF8FF;
+}
+
+.report-info {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.actions button {
+  margin-left: 5px;
+}
+
+.comentario {
+  margin-top: 20px;
+  width: 60%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #0080FF;
+}
